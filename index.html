@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AiSOL — агенты с искусственным интеллектом</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+  <div class="container header-inner">
+    <div class="logo">AiSOL</div>
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#pricing">Прайс-лист</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contact" class="btn btn-small">Заказать</a>
+
+    <!-- Бургер для мобилы -->
+    <div class="burger" id="burger" aria-controls="mobileNav" aria-expanded="false" aria-label="Меню">
+  <i class="fa-solid fa-bars"></i>
+</div>
+
+  </div>
+
+  <!-- Мобильное меню -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services">Услуги</a>
+    <a href="#cases">Кейсы</a>
+    <a href="#pricing">Прайс-лист</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="btn btn-small">Заказать</a>
+  </div>
+</header>
+<script>
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  function openMenu() {
+    mobileNav.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // открыть/закрыть по клику на бургер
+  burger.addEventListener('click', () => {
+    mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // закрывать при клике на ссылки
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // закрыть при клике вне меню
+  document.addEventListener('click', (e) => {
+    if (!mobileNav.contains(e.target) && !burger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // закрыть по Esc
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>
+
+
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Создаём интеллектуальные <span>чат-боты</span></h1>
+        <p>Раcширьте бизнес-возможности с помощью автоматизации и ИИ-решений</p>
+        <a href="#contact" class="btn btn-large">Получить консультацию</a>
+      </div>
+      <div class="hero-image">
+        <!-- вставь иллюстрацию или svg -->
+        <img src="hotoroom.png" alt="Чат-бот иллюстрация" />
+      </div>
+    </div>
+  </section>
+  <!-- CASES -->
+<section id="cases" class="section section-light">
+  <div class="container">
+    <h2>Наши кейсы</h2>
+    <div class="grid">
+      <!-- Донер на Абая -->
+      <div class="case-card">
+        <div class="case-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="case-content">
+          <h3>ИИ-ассистент для «Донер на Абая»</h3>
+          <p>Принимает заказы клиентов напрямую через WhatsApp, ускоряя обслуживание и снижая нагрузку на персонал.</p>
+        </div>
+      </div>
+      <!-- Jadyra's -->
+      <div class="case-card">
+        <div class="case-icon"><i class="fa-solid fa-store"></i></div>
+        <div class="case-content">
+          <h3>Консультант-продавец для «Jadyra's»</h3>
+          <p>ИИ-ассистент консультирует покупателей, помогает подобрать косметику и уходовые средства, оформляет заказы.</p>
+        </div>
+      </div>
+      <!-- Edyge Decor -->
+      <div class="case-card">
+        <div class="case-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <div class="case-content">
+          <h3>Консультант-замерщик для «Edyge Decor»</h3>
+          <p>Автоматически собирает заявки, производит расчет сметы и организует замер для облицовки зданий термопанелями.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section">
+  <div class="container">
+    <h2>Прайс-лист</h2>
+
+    <!-- Десктопная таблица -->
+    <div class="table-wrapper">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Наименование услуги</th>
+            <th>Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><i class="fa-solid fa-comments icon"></i> FAQ консультация (текст)</td>
+            <td>200 000 ₸</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-microphone icon"></i> Работа с аудио</td>
+            <td>50 000 ₸</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-image icon"></i> Работа с фото</td>
+            <td>50 000 ₸</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-video icon"></i> Работа с видео</td>
+            <td>100 000 ₸</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-file-lines icon"></i> Работа с документами</td>
+            <td>100 000 ₸</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-store icon"></i> Продажа товаров и услуг (до 5000 наименований)</td>
+            <td>150 000 ₸</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-calendar-check icon"></i> Запись на приём в Google Календарь / Таблицы</td>
+            <td>200 000 ₸</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-diagram-project icon"></i> Интеграция с CRM, 1С и иными источниками</td>
+            <td>от 250 000 ₸</td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-repeat icon"></i> Повторные касания</td>
+            <td>от 100 000 ₸</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Мобильная версия прайс-листа -->
+    <div class="price-mobile">
+      <div class="price-item">
+        <h3><i class="fa-solid fa-comments icon"></i> FAQ консультация (текст)</h3>
+        <p>200 000 ₸</p>
+      </div>
+      <div class="price-item">
+        <h3><i class="fa-solid fa-microphone icon"></i> Работа с аудио</h3>
+        <p>50 000 ₸</p>
+      </div>
+      <div class="price-item">
+        <h3><i class="fa-solid fa-image icon"></i> Работа с фото</h3>
+        <p>50 000 ₸</p>
+      </div>
+      <div class="price-item">
+        <h3><i class="fa-solid fa-video icon"></i> Работа с видео</h3>
+        <p>100 000 ₸</p>
+      </div>
+      <div class="price-item">
+        <h3><i class="fa-solid fa-file-lines icon"></i> Работа с документами</h3>
+        <p>100 000 ₸</p>
+      </div>
+      <div class="price-item">
+        <h3><i class="fa-solid fa-store icon"></i> Продажа товаров и услуг (до 5000 наименований)</h3>
+        <p>150 000 ₸</p>
+      </div>
+      <div class="price-item">
+        <h3><i class="fa-solid fa-calendar-check icon"></i> Запись на приём в Google Календарь / Таблицы</h3>
+        <p>200 000 ₸</p>
+      </div>
+      <div class="price-item">
+        <h3><i class="fa-solid fa-diagram-project icon"></i> Интеграция с CRM, 1С и иными источниками</h3>
+        <p>от 250 000 ₸</p>
+      </div>
+      <div class="price-item">
+        <h3><i class="fa-solid fa-repeat icon"></i> Повторные касания</h3>
+        <p>от 100 000 ₸</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Чат-боты для продаж</h3>
+          <p>Автоматизация заказа, рекомендации, upsell.</p>
+        </div>
+        <div class="card">
+          <h3>Поддержка клиентов</h3>
+          <p>Обработка запросов, ответы 24/7, снижение нагрузки операторов.</p>
+        </div>
+        <div class="card">
+          <h3>Голосовые ассистенты</h3>
+          <p>Интеграция с телефонными системами, автоматический приём вызовов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="faq" class="section">
+  <div class="container">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>⏱ Сколько занимает внедрение чат-бота?</h3>
+        <p>Обычно от 5 до 10 рабочих дней, в зависимости от сложности.</p>
+      </div>
+      <div class="faq-item">
+        <h3>⚙️ Работаете ли вы с 1С и CRM?</h3>
+        <p>Да, мы интегрируем чат-ботов с 1С, Bitrix24, AmoCRM и другими системами.</p>
+      </div>
+      <div class="faq-item">
+        <h3>💬 Можно ли подключить WhatsApp и Instagram?</h3>
+        <p>Да, мы работаем со всеми популярными мессенджерами и соцсетями.</p>
+      </div>
+      <div class="faq-item">
+        <h3>📞 Есть ли поддержка после запуска?</h3>
+        <p>Да, мы предоставляем техническую поддержку и доработку ботов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="contact" class="section section-light">
+    <div class="container">
+      <h2>Связаться с нами</h2>
+      <form class="form">
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Email" required />
+        <input type="tel" placeholder="Телефон" required />
+        <textarea rows="4" placeholder="Подробнее о Вашем бизнесе"></textarea>
+        <button type="submit" class="btn btn-large">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 AiSOL. Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>
